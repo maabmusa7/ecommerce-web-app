@@ -155,9 +155,7 @@ Database: taja_db
 LIVE SERVER (InfinityFree)
 File: db_live.php
 Host: sql111.infinityfree.com
-Username: if0_41972705
-Password: 12A34I56O
-Database: if0_41972705_taja_db
+
 
 
 
