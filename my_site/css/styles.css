@@ -1,0 +1,494 @@
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500&display=swap');
+
+/* ── Color Variables ── */
+:root {
+    --noir: #1a1a1a;
+    --rose-gold: #b76e79;
+    --blush: #f2dde1;
+    --ivory: #faf7f4;
+    --warm-white: #ffffff;
+    --muted: #8a7a7d;
+    --border: #e8dfe1;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--ivory);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    color: var(--noir);
+    line-height: 1.7;
+}
+
+/* ── Hamburger Lines ── */
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: #1a1a1a;
+    transition: all 0.3s ease;
+}
+
+#sidebarToggle:hover .hamburger-line {
+    background: #b76e79;
+}
+
+/* ── Sidebar Links Hover ── */
+#sidebar a:hover {
+    color: #b76e79 !important;
+    padding-left: 32px !important;
+    background: rgba(183,110,121,0.08) !important;
+}
+
+/* ── Hero Section ── */
+.hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--blush);
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #f2dde1 0%, #faf7f4 50%, #e8d5d9 100%);
+    z-index: 0;
+}
+
+.hero-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(242, 221, 225, 0.95) 40%,rgba(242, 221, 225, 0.3) 100%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 80px 60px;
+    max-width: 600px;
+    animation: fadeUp 1s ease forwards;
+}
+
+.hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose-gold);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.15;
+    color: var(--noir);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero h1 em {
+    color: var(--rose-gold);
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 1rem;
+    color: var(--muted);
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+
+/* ── Buttons ── */
+.btn-primary-custom {
+    display: inline-block;
+    background: var(--noir);
+    color: white;
+    padding: 14px 40px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    background: var(--rose-gold);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-outline-custom {
+    display: inline-block;
+    background: transparent;
+    color: var(--noir);
+    padding: 12px 35px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--noir);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+    background: var(--noir);
+    color: white;
+}
+
+/* Bootstrap Button Overrides */
+.btn-primary {
+    background-color: var(--noir) !important;
+    border-color: var(--noir) !important;
+    font-family: 'Jost', sans-serif;
+    letter-spacing: 0.05em;
+    border-radius: 0 !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--rose-gold) !important;
+    border-color: var(--rose-gold) !important;
+}
+
+.btn-success {
+    background-color: var(--rose-gold) !important;
+    border-color: var(--rose-gold) !important;
+    border-radius: 0 !important;
+}
+
+.btn-success:hover {
+    background-color: var(--noir) !important;
+    border-color: var(--noir) !important;
+}
+
+.btn-warning {
+    background-color: #c9a96e !important;
+    border-color: #c9a96e !important;
+    color: white !important;
+    border-radius: 0 !important;
+}
+
+.btn-danger {
+    border-radius: 0 !important;
+}
+
+.btn-secondary {
+    border-radius: 0 !important;
+}
+
+/* ── Add to Cart Button ── */
+.btn-add-cart {
+    width: 100%;
+    background: var(--noir);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-family: 'Jost', sans-serif;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-add-cart:hover {
+    background: var(--rose-gold);
+}
+
+/* ── View All Link ── */
+.view-all-link {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--muted);
+    font-family: 'Jost', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.view-all-link:hover {
+    color: var(--rose-gold);
+    border-color: var(--rose-gold);
+}
+
+/* ── Section Headers ── */
+.section-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose-gold);
+    display: block;
+    margin-bottom: 6px;
+    font-family: 'Jost', sans-serif;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--noir);
+    font-weight: 700;
+    margin: 0;
+}
+
+/* ── Product Cards ── */
+.product-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-color: var(--rose-gold);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-card-body {
+    padding: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.product-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: var(--noir);
+    margin-bottom: 4px;
+}
+
+.product-card-price {
+    font-size: 0.9rem;
+    color: var(--rose-gold);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* ── Bestseller Badge ── */
+.bestseller-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--rose-gold);
+    color: white;
+    font-size: 0.65rem;
+    padding: 4px 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'Jost', sans-serif;
+}
+
+/* ── No Image Placeholder ── */
+.no-image-placeholder {
+    height: 220px;
+    background: var(--blush);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'Jost', sans-serif;
+}
+
+/* ── Tables ── */
+.table {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+}
+
+.table thead th {
+    background-color: var(--noir) !important;
+    color: white !important;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    border: none !important;
+    padding: 15px !important;
+}
+
+.table td {
+    padding: 12px 15px !important;
+    border-color: var(--border) !important;
+    vertical-align: middle !important;
+}
+
+.table-dark {
+    background-color: var(--noir) !important;
+}
+
+/* ── Forms ── */
+.form-control, .form-select {
+    border: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    padding: 12px 15px !important;
+    background-color: var(--warm-white) !important;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--rose-gold) !important;
+    box-shadow: 0 0 0 3px rgba(183,110,121,0.15) !important;
+}
+
+.form-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 400;
+    margin-bottom: 8px;
+    font-family: 'Jost', sans-serif;
+}
+
+/* ── Alerts ── */
+.alert {
+    border-radius: 0 !important;
+    font-size: 0.9rem;
+    border-left-width: 3px !important;
+    font-family: 'Jost', sans-serif;
+}
+
+.alert-danger {
+    background-color: #fdf2f3 !important;
+    border-color: var(--rose-gold) !important;
+    color: var(--noir) !important;
+}
+
+.alert-success {
+    background-color: #f2fdf5 !important;
+    border-color: #6dbf8a !important;
+    color: var(--noir) !important;
+}
+
+/* ── Cards (Bootstrap) ── */
+.card {
+    border: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* ── Page Headers ── */
+.page-header {
+    padding: 40px 0 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+}
+
+.page-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--noir);
+    margin: 0;
+}
+
+/* ── Footer ── */
+.footer {
+    background: var(--noir);
+    color: rgba(255,255,255,0.6);
+    padding: 50px 0 20px;
+    margin-top: 0;
+    font-family: 'Jost', sans-serif;
+}
+
+.footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--rose-gold);
+    margin-bottom: 8px;
+}
+
+.footer-tagline {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.05em;
+}
+
+.footer-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 12px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.social-link {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--rose-gold);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.05em;
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .hero { min-height: 70vh; }
+    .hero-image { width: 100%; opacity: 0.3; }
+    .hero-overlay { background: rgba(242,221,225,0.85); }
+    .hero-content { padding: 60px 30px; }
+}
