@@ -89,7 +89,36 @@ Backend:
 
 
 
-
+File structure
+   index.php            (Homepage)
+   login.php            (Login page)
+   register.php         (Registration page)
+   logout.php           (Logout handler)
+   db.php               (Database connection)
+   search.php           (AJAX search endpoint)
+   products.php         (View all products)
+   add_product.php      (Add new product)
+   edit_product.php     (Edit product)
+   delete_category.php  (Delete category)
+   cart.php             (View cart)
+   add_to_cart.php      (Add to cart handler)
+   update_cart.php      (Update cart quantity)
+   delete_cart.php      (Remove from cart)
+   orders.php           (View orders)
+   place_order.php      (Delete order)
+   view_order.php       (View order details)
+   delete_order.php     (Delete order)
+   user.php             (View all users)
+   edit_user.php        (Edit user deatails)
+   delete_user.php      (Delete user)
+   css
+      styles.css         (Custom styles)
+   includes
+      navbar.php         (Share navbar)
+      footer.php         (Share footer)
+      sidebar_script.php (Sidebar JavaScript)
+   uploads              (Product Images)
+ 
 
 
 
